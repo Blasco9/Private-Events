@@ -1,0 +1,20 @@
+<h1>Events#index</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event Name</th>
+      <th>Date</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |evt| %>
+      <tr>
+        <td><%= evt.name %></td>
+        <td><%= evt.date %></td>
+        <td><%= evt.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
