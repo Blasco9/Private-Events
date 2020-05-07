@@ -1,0 +1,9 @@
+<h1>Sessions#new</h1>
+
+<%= flash[:notice] %>
+
+<%= form_with(url: '/sessions', method: 'post') do %>
+  <%= label_tag "user[username]", 'User Name' %>
+  <%= text_field_tag "user[username]" %>
+  <%= submit_tag 'Log In' %>
+<% end %>
