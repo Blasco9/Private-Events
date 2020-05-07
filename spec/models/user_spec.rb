@@ -23,4 +23,8 @@ RSpec.describe User, type: :model do
       expect(dup_user).not_to be_valid
     end
   end
+
+  context 'Associations tests' do
+    it { should have_many(:created_events)}
+  end
 end
