@@ -35,5 +35,7 @@ RSpec.describe Event, type: :model do
   
   context 'Associations tests' do
     it { should belong_to(:creator)}
+    it { should have_many(:event_attendances) }
+    it { should have_many(:attendees) }
   end
 end

@@ -26,5 +26,7 @@ RSpec.describe User, type: :model do
 
   context 'Associations tests' do
     it { should have_many(:created_events)}
+    it { should have_many(:event_attendances) }
+    it { should have_many(:appointed_events) }
   end
 end
