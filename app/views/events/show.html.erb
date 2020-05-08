@@ -1,5 +1,20 @@
 <h1>Events#show</h1>
 
-<p>
-  This event was created by <%= @event.creator.username %>
-</p>
+<div>
+  <h4>Creator: <%= @event.creator.username %></h4>
+  <div>
+    <p><%= @event.name %></p>
+    <p>Date: <%= @event.date.to_s.split('-').reverse.join('-') %></p>
+    <p><%= @event.description %></p>
+  </div>
+  <div>
+    <h4>Attendees: <%= @event.attendees.count %></h4>
+    <% if @event.attendees.any? %>
+    <ul>
+      <%= @event.attendees.each do |attendee| %>
+        <li><%= attendee.username %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+</div>

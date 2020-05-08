@@ -11,7 +11,7 @@
   <% if @user.created_events.any? %>
     <ul>
       <% @user.created_events.each do |evt| %>
-        <li><%= evt %></li>
+        <li><%= link_to evt.name, event_path(evt) %></li>
       <% end %>
     </ul>
   <% end %>
