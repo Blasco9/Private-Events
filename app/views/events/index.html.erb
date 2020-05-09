@@ -1,5 +1,8 @@
 <h1>Events#index</h1>
 
+<h3>Past Events</h3>
+
+<% if @past_events.any? %>
 <table>
   <thead>
     <tr>
@@ -9,12 +12,36 @@
     </tr>
   </thead>
   <tbody>
-    <% @events.each do |evt| %>
-      <tr>
-        <td><%= evt.name %></td>
-        <td><%= evt.date %></td>
-        <td><%= evt.description %></td>
-      </tr>
+    <% @past_events.each do |evt| %>
+    <tr>
+      <td><%= evt.name %></td>
+      <td><%= evt.date %></td>
+      <td><%= evt.description %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
+<% end %>
+
+<h3>Upcoming Events</h3>
+
+<% if @upcoming_events.any? %>
+<table>
+  <thead>
+    <tr>
+      <th>Event Name</th>
+      <th>Date</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @upcoming_events.each do |evt| %>
+    <tr>
+      <td><%= evt.name %></td>
+      <td><%= evt.date %></td>
+      <td><%= evt.description %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
