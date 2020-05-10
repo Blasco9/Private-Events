@@ -18,10 +18,10 @@
 </div>
 
 <div>
-  <h4>Attended Events: <%= @user.attended_events.count %></h4>
-  <% if @user.attended_events.any? %>
+  <h4>Attended Events: <%= @user.appointed_events.past.count %></h4>
+  <% if @user.appointed_events.past.any? %>
   <ul>
-    <% @user.attended_events.each do |evt| %>
+    <% @user.appointed_events.past.each do |evt| %>
     <li><%= evt.name %></li>
     <% end %>
   </ul>
@@ -29,10 +29,10 @@
 </div>
 
 <div>
-  <h4>Upcoming Events: <%= @user.upcoming_events.count %></h4>
-  <% if @user.upcoming_events.any? %>
+  <h4>Upcoming Events: <%= @user.appointed_events.upcoming.count %></h4>
+  <% if @user.appointed_events.upcoming.any? %>
   <ul>
-    <% @user.upcoming_events.each do |evt| %>
+    <% @user.appointed_events.upcoming.each do |evt| %>
     <li><%= evt.name %></li>
     <% end %>
   </ul>

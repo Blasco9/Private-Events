@@ -6,4 +6,7 @@ class Event < ApplicationRecord
   belongs_to :creator, class_name: 'User'
   has_many :event_attendances
   has_many :attendees, through: :event_attendances, class_name: 'User', foreign_key: 'attendee_id'
+
+  scope :past, -> { where('date < ?', Time.now.strftime('%Y-%m-%d')) }
+  scope :upcoming, -> { where('date >= ?', Time.now.strftime('%Y-%m-%d')) }
 end

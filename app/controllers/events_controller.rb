@@ -2,8 +2,8 @@ class EventsController < ApplicationController
   include EventsHelper
 
   def index
-    @past_events = past
-    @upcoming_events = upcoming
+    @past_events = Event.past
+    @upcoming_events = Event.upcoming
   end
 
   def show
