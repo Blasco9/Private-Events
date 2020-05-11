@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
     return unless session[:id]
     @current_user ||= User.find(session[:id])
   end
+
+  def authenticate_user
+    redirect_to :login, notice: 'You have to login' unless current_user
+  end
 end

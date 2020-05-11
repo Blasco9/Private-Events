@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   include EventsHelper
+  before_action :authenticate_user, only: [:new, :create]
 
   def index
     @past_events = Event.past

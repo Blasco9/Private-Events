@@ -4,8 +4,6 @@
 
 <h3>Hello <%= @user.username %></h3>
 
-<%= link_to 'Log Out', session_path, method: :delete %>
-
 <div>
   <h4>Created Events: <%= @user.created_events.count %></h4>
   <% if @user.created_events.any? %>

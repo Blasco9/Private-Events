@@ -8,18 +8,15 @@ class SessionsController < ApplicationController
     @user = User.find_by(user_params)
 
     if @user
-      flash[:notice] = 'Logged in successfuly'
       session[:id] = @user.id
-      redirect_to @user
+      redirect_to @user, notice: 'Logged in successfuly'
     else
-      flash[:notice] = 'Invalid user name'
-      redirect_to '/login'
+      redirect_to :login, notice: 'Invalid user name'
     end
   end
 
   def destroy
     reset_session
-    flash[:notice] = 'You logged out'
-    redirect_to '/login'
+    redirect_to events_path, notice: 'You logged out'
   end
 end
