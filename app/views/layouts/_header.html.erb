@@ -1,13 +1,14 @@
 <header>
   <nav>
     <ul>
-      <li><%= link_to 'Events', events_path %></li>
+      <li><%= link_to 'All Events', events_path %></li>
       <% if current_user %>
+        <li><%= link_to 'Your Events', user_path(current_user) %></li>
         <li><%= link_to 'Create Event', new_event_path %></li>
-        <li><%= link_to current_user.username, user_path(current_user) %></li>
         <li><%= link_to 'Logout', session_path(current_user), method: :delete %></li>
       <% else %>
         <li><%= link_to 'Login', login_path %></li>
+        <li><%= link_to 'Register', new_user_path %></li>
       <% end %>
     </ul>
   </nav>

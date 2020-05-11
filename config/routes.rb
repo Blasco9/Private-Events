@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
+  resources :event_attendances, only: [:create]
   resources :sessions, only: [:create, :destroy]
   resources :events, only: [:index, :show, :new, :create]
   resources :users, only: [:new, :create, :show]
