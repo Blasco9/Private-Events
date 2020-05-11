@@ -7,18 +7,18 @@
 <div>
   <h4>Created Events: <%= @user.created_events.count %></h4>
   <% if @user.created_events.any? %>
-  <ul>
+  <div>
     <% @user.created_events.each do |evt| %>
-    <li>
+    <div>
       <%= link_to evt.name, event_path(evt) %>
       <%= form_with model: EventAttendance.new do |f| %>
         <%= f.hidden_field :event_id, value: evt.id %>
         <%= f.collection_select :attendee_id, @users, :id, :username %>
         <%= f.submit 'Send Invitation' %>
       <% end %>
-    </li>
+    </div>
     <% end %>
-  </ul>
+  </div>
   <% end %>
 </div>
 

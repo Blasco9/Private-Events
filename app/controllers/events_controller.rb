@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-  include EventsHelper
   before_action :authenticate_user, only: [:new, :create]
 
   def index
@@ -24,5 +23,11 @@ class EventsController < ApplicationController
     else
       render :new
     end
+  end
+
+  private
+
+  def event_params
+    params.require(:event).permit(:name, :date, :description)
   end
 end
