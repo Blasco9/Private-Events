@@ -1,11 +1,9 @@
 class SessionsController < ApplicationController
-  include UsersHelper
-
   def new
   end
 
   def create
-    @user = User.find_by(user_params)
+    @user = User.find_by(session_params)
 
     if @user
       session[:id] = @user.id
@@ -18,5 +16,11 @@ class SessionsController < ApplicationController
   def destroy
     reset_session
     redirect_to events_path, notice: 'You logged out'
+  end
+
+  private
+
+  def session_params
+    params.require(:user).permit(:username)
   end
 end
