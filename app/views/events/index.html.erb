@@ -17,7 +17,7 @@
         <% @past_events.each do |evt| %>
         <tr>
           <td class="py-1"><%= evt.name %></td>
-          <td class="py-1"><%= evt.date %></td>
+          <td class="py-1"><%= evt.formated_date %></td>
           <td class="py-1"><%= evt.description %></td>
         </tr>
         <% end %>
@@ -42,7 +42,7 @@
         <% @upcoming_events.each do |evt| %>
         <tr>
           <td class="py-1"><%= evt.name %></td>
-          <td class="py-1"><%= evt.date %></td>
+          <td class="py-1"><%= evt.formated_date %></td>
           <td class="py-1"><%= evt.description %></td>
         </tr>
         <% end %>

@@ -9,4 +9,8 @@ class Event < ApplicationRecord
 
   scope :past, -> { where('date < ?', Time.now.strftime('%Y-%m-%d')) }
   scope :upcoming, -> { where('date >= ?', Time.now.strftime('%Y-%m-%d')) }
+
+  def formated_date
+    date.to_s.split('-').reverse.join('-')
+  end
 end

@@ -5,7 +5,7 @@
     <h4 class="mb-4">Event Info</h4>
     <div class="border pt-3">
       <p><strong><%= @event.name %></strong></p>
-      <p><strong>Date: </strong><%= @event.date.to_s.split('-').reverse.join('-') %></p>
+      <p><strong>Date: </strong><%= @event.formated_date %></p>
       <p><%= @event.description %></p>
     </div>
   </div>
