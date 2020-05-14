@@ -1,49 +1,53 @@
 <%= flash[:notice] %>
 
-<h1>Events#index</h1>
+<div class="container d-flex">
+  <div class="col-6 p-4 border">
+    <h3 class="mb-4">Past Events</h3>
 
-<h3>Past Events</h3>
-
-<% if @past_events.any? %>
-<table>
-  <thead>
-    <tr>
-      <th>Event Name</th>
-      <th>Date</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @past_events.each do |evt| %>
-    <tr>
-      <td><%= evt.name %></td>
-      <td><%= evt.date %></td>
-      <td><%= evt.description %></td>
-    </tr>
+    <% if @past_events.any? %>
+    <table class="container">
+      <thead>
+        <tr>
+          <th class="w-25">Event Name</th>
+          <th class="w-25">Date</th>
+          <th class="w-25">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @past_events.each do |evt| %>
+        <tr>
+          <td class="py-1"><%= evt.name %></td>
+          <td class="py-1"><%= evt.date %></td>
+          <td class="py-1"><%= evt.description %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
     <% end %>
-  </tbody>
-</table>
-<% end %>
+  </div>
 
-<h3>Upcoming Events</h3>
+  <div class="col-6 p-4 border">
+    <h3 class="mb-4">Upcoming Events</h3>
 
-<% if @upcoming_events.any? %>
-<table>
-  <thead>
-    <tr>
-      <th>Event Name</th>
-      <th>Date</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @upcoming_events.each do |evt| %>
-    <tr>
-      <td><%= evt.name %></td>
-      <td><%= evt.date %></td>
-      <td><%= evt.description %></td>
-    </tr>
+    <% if @upcoming_events.any? %>
+    <table class="container">
+      <thead>
+        <tr>
+          <th class="w-25">Event Name</th>
+          <th class="w-25">Date</th>
+          <th class="w-25">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @upcoming_events.each do |evt| %>
+        <tr>
+          <td class="py-1"><%= evt.name %></td>
+          <td class="py-1"><%= evt.date %></td>
+          <td class="py-1"><%= evt.description %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
     <% end %>
-  </tbody>
-</table>
-<% end %>
+  </div>
+</div>

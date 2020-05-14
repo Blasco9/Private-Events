@@ -1,20 +1,20 @@
 <%= flash[:notice] %>
 
-<h1>Events#show</h1>
-
-<div>
-  <h4>Creator: <%= @event.creator.username %></h4>
-  <div>
-    <p><%= @event.name %></p>
-    <p>Date: <%= @event.date.to_s.split('-').reverse.join('-') %></p>
-    <p><%= @event.description %></p>
+<div class="w-25 mx-auto">
+  <div class="text-center">
+    <h4 class="mb-4">Event Info</h4>
+    <div class="border pt-3">
+      <p><strong><%= @event.name %></strong></p>
+      <p><strong>Date: </strong><%= @event.date.to_s.split('-').reverse.join('-') %></p>
+      <p><%= @event.description %></p>
+    </div>
   </div>
-  <div>
-    <h4>Attendees: <%= @event.attendees.count %></h4>
+  <div class="mt-5 pt-3 text-center">
+    <h4 class="mb-4">Attendees: <%= @event.attendees.count %></h4>
     <% if @event.attendees.any? %>
-    <ul>
-      <%= @event.attendees.each do |attendee| %>
-        <li><%= attendee.username %></li>
+    <ul class="list-group">
+      <% @event.attendees.each do |attendee| %>
+      <li class="list-group-item w-50 mx-auto"><%= attendee.username %></li>
       <% end %>
     </ul>
     <% end %>

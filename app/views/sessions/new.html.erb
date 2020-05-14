@@ -1,9 +1,7 @@
-<h1>Sessions#new</h1>
-
 <%= flash[:notice] %>
 
-<%= form_with(url: '/sessions', method: 'post') do %>
-  <%= label_tag "user[username]", 'User Name' %>
-  <%= text_field_tag "user[username]" %>
-  <%= submit_tag 'Log In' %>
+<%= form_with url: '/sessions', method: 'post', html: { class: 'w-25 m-auto text-center border p-3' } do %>
+  <%= label_tag "user[username]", 'Username' %>
+  <%= text_field_tag "user[username]", nil, class: 'form-control mb-3' %>
+  <%= submit_tag 'Log In', class: 'btn btn-primary' %>
 <% end %>
