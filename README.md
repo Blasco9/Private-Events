@@ -1,4 +1,4 @@
-# Members Only
+# Private Events
 
 > The purpose of this project was to learn about associations in rails
 
