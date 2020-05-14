@@ -32,9 +32,9 @@ RSpec.describe Event, type: :model do
       expect(event).not_to be_valid
     end
   end
-  
+
   context 'Associations tests' do
-    it { should belong_to(:creator)}
+    it { should belong_to(:creator) }
     it { should have_many(:event_attendances) }
     it { should have_many(:attendees) }
   end

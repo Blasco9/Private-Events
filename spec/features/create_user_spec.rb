@@ -5,7 +5,7 @@ RSpec.describe 'Creating a new user', type: :feature do
     visit new_user_path
     fill_in 'Username', with: 'John Doe'
     click_on 'Create User'
-    expect(page).to have_content('Hello John Doe')
+    expect(page).to have_content('Welcome, John Doe')
   end
 
   scenario 'invalid creation' do
