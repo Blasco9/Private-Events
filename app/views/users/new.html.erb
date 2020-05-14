@@ -6,7 +6,7 @@
   </ul>
 <% end %>
 
-<%= form_with model: @user, local: true, html: { class: 'w-25 m-auto text-center border p-3' } do |f| %>
+<%= form_with model: @user, local: true, html: { class: 'w-25 mx-auto text-center border p-3 mt-5' } do |f| %>
   <%= f.label :username %>
   <%= f.text_field :username, class: 'form-control mb-3' %>
   <%= f.submit 'Create User', class: 'btn btn-primary' %>

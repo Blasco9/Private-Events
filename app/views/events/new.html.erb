@@ -1,12 +1,12 @@
 <% if @event.errors.any? %>
-  <ul>
+  <ul class="mt-5">
     <% @event.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
   </ul>
 <% end %>
 
-<%= form_with model: @event, local: true, html: { class: 'w-25 m-auto text-center border p-3' } do |f| %>
+<%= form_with model: @event, local: true, html: { class: 'w-25 mx-auto text-center border p-3 mt-5' } do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name, class: 'form-control mb-3' %>
   <%= f.label :date %>
