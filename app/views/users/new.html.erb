@@ -1,7 +1,7 @@
 <% if @user.errors.any? %>
-  <ul>
+  <ul class="nav mt-5">
     <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+      <li class="mx-auto border border-danger text-danger p-2"><%= msg %></li>
     <% end %>
   </ul>
 <% end %>

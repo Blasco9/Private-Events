@@ -1,7 +1,7 @@
 <% if @event.errors.any? %>
-  <ul class="mt-5">
+  <ul class="navbar-nav mt-5">
     <% @event.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+      <li class="mx-auto border border-danger text-danger mt-1 p-2"><%= msg %></li>
     <% end %>
   </ul>
 <% end %>
