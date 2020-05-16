@@ -1,0 +1,17 @@
+<% if @event.errors.any? %>
+  <ul class="navbar-nav mt-5">
+    <% @event.errors.full_messages.each do |msg| %>
+      <li class="mx-auto border border-danger text-danger mt-1 p-2"><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with model: @event, local: true, html: { class: 'w-25 mx-auto text-center border p-3 mt-5' } do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control mb-3' %>
+  <%= f.label :date %>
+  <%= f.date_field :date, value: Time.now.strftime('%Y-%m-%d'), class: 'form-control mb-3' %>
+  <%= f.label :description %>
+  <%= f.text_area :description, class: 'form-control mb-3' %>
+  <%= f.submit 'Create Event', class: 'btn btn-primary' %>
+<% end %>

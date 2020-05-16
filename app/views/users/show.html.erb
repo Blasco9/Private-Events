@@ -1,0 +1,49 @@
+<%= flash[:notice] %>
+
+<div class="container mt-5">
+  <h3 class="text-center mb-5">Welcome, <%= @user.username %></h3>
+
+  <div class="row">
+    <div class="col-4">
+      <h4>Created Events: <%= @user.created_events.count %></h4>
+      <% if @user.created_events.any? %>
+      <% @user.created_events.each do |evt| %>
+      <div class="row my-3">
+        <%= link_to evt.name, event_path(evt), class: 'btn btn-outline-dark col-4' %>
+        <%= form_with model: EventAttendance.new, class: 'd-flex align-items-center' do |f| %>
+        <%= f.hidden_field :event_id, value: evt.id %>
+        <%= f.collection_select :attendee_id, @users, :id, :username, {}, {class: 'custom-select custom-select-sm mx-2'} %>
+        <%= f.submit 'Send Invitation', class: 'btn btn-primary btn-sm' %>
+        <% end %>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+
+    <div class="col-4">
+      <h4>Attended Events: <%= @user.appointed_events.past.count %></h4>
+      <% if @user.appointed_events.past.any? %>
+      <ul class="nav my-3">
+        <% @user.appointed_events.past.each do |evt| %>
+        <li>
+          <%= link_to evt.name, event_path(evt), class: 'btn btn-outline-dark' %>
+        </li>
+        <% end %>
+      </ul>
+      <% end %>
+    </div>
+
+    <div class="col-4">
+      <h4>Upcoming Events: <%= @user.appointed_events.upcoming.count %></h4>
+      <% if @user.appointed_events.upcoming.any? %>
+      <ul class="nav my-3">
+        <% @user.appointed_events.upcoming.each do |evt| %>
+        <li>
+          <%= link_to evt.name, event_path(evt), class: 'btn btn-outline-dark' %>
+        </li>
+        <% end %>
+      </ul>
+      <% end %>
+    </div>
+  </div>
+</div>

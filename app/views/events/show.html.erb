@@ -1,0 +1,22 @@
+<%= flash[:notice] %>
+
+<div class="w-25 mx-auto mt-5">
+  <div class="text-center">
+    <h4 class="mb-4">Event Info</h4>
+    <div class="border pt-3">
+      <p><strong><%= @event.name %></strong></p>
+      <p><strong>Date: </strong><%= @event.formated_date %></p>
+      <p><%= @event.description %></p>
+    </div>
+  </div>
+  <div class="mt-5 pt-3 text-center">
+    <h4 class="mb-4">Attendees: <%= @event.attendees.count %></h4>
+    <% if @event.attendees.any? %>
+    <ul class="list-group">
+      <% @event.attendees.each do |attendee| %>
+      <li class="list-group-item w-50 mx-auto"><%= attendee.username %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+</div>

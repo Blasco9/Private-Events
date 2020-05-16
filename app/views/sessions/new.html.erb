@@ -1,0 +1,7 @@
+<%= flash[:notice] %>
+
+<%= form_with url: '/sessions', method: 'post', html: { class: 'w-25 mx-auto text-center border p-3 mt-5' } do %>
+  <%= label_tag "user[username]", 'Username' %>
+  <%= text_field_tag "user[username]", nil, class: 'form-control mb-3' %>
+  <%= submit_tag 'Log In', class: 'btn btn-primary' %>
+<% end %>

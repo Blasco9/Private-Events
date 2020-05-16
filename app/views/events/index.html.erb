@@ -1,0 +1,53 @@
+<%= flash[:notice] %>
+
+<div class="container d-flex mt-5">
+  <div class="col-6 p-4 border">
+    <h3 class="mb-4">Past Events</h3>
+
+    <% if @past_events.any? %>
+    <table class="container">
+      <thead>
+        <tr>
+          <th class="w-25">Event Name</th>
+          <th class="w-25">Date</th>
+          <th class="w-25">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @past_events.each do |evt| %>
+        <tr>
+          <td class="py-1"><%= evt.name %></td>
+          <td class="py-1"><%= evt.formated_date %></td>
+          <td class="py-1"><%= evt.description %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <% end %>
+  </div>
+
+  <div class="col-6 p-4 border">
+    <h3 class="mb-4">Upcoming Events</h3>
+
+    <% if @upcoming_events.any? %>
+    <table class="container">
+      <thead>
+        <tr>
+          <th class="w-25">Event Name</th>
+          <th class="w-25">Date</th>
+          <th class="w-25">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @upcoming_events.each do |evt| %>
+        <tr>
+          <td class="py-1"><%= evt.name %></td>
+          <td class="py-1"><%= evt.formated_date %></td>
+          <td class="py-1"><%= evt.description %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <% end %>
+  </div>
+</div>

@@ -1,57 +1,48 @@
-# Project Name
+# Private Events
 
-> One paragraph statement about the project.
+> The purpose of this project was to learn about associations in rails
 
-![screenshot](./app_screenshot.png)
+For this project I created a web page that lets users create events and invite other users to them. A user can only attend an event if he/she is invited first. See full task [here](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations#project-private-events)
 
-Additional description about the project and its features.
+![screenshot](Screenshot.bmp)
 
 ## Built With
 
-- Major languages,
-- frameworks,
-- technologies used
-
-## Live Demo
-
-[Live Demo Link](https://livedemo.com)
-
+- Ruby
+- Ruby on Rails
+- Bootstrap
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
+You will need:
+- Ruby
+- Ruby on Rails
+- Bundler
 
 ### Install
 
+Clone the repo
+
+`git clone git@github.com:Blasco9/Private-Events.git`
+
+Install dependencies
+
+`bundle install`
+
+Run the server
+
+`rails server`
+
 ### Usage
 
-### Run tests
-
-### Deployment
-
-
+Once you have started the server you will be able to register as a user and then create events and invite other users
 
 ## Authors
 
-👤 **Author1**
+👤 **Julian Blasco**
 
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
-
-👤 **Author2**
-
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
+- Github: [@Blasco9](https://github.com/Blasco9)
+- Linkedin: [Julian Blasco](https://www.linkedin.com/in/julian-augusto-blasco-1656a0153/)
 
 ## 🤝 Contributing
 
@@ -65,9 +56,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- The Odin Project
+- Microverse
 
 ## 📝 License
 
