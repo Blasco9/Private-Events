@@ -1,8 +1,8 @@
 # Private Events
 
-> The purpose of this project was to learn about associations in rails
+> The purpose of this project was to learn about associations in Rails.
 
-For this project I created a web page that lets users create events and invite other users to them. A user can only attend an event if he/she is invited first. See full task [here](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations#project-private-events)
+For this project, I created a web page that lets users create events and invite other users to them. A user can only attend events if he/she gets invited first. See full task [here](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations#project-private-events)
 
 ![screenshot](Screenshot.bmp)
 
@@ -35,14 +35,15 @@ Run the server
 
 ### Usage
 
-Once you have started the server you will be able to register as a user and then create events and invite other users
+Once you have started the server, you will be able to register as a user and then create events and invite other users.
 
 ## Authors
 
 👤 **Julian Blasco**
 
 - Github: [@Blasco9](https://github.com/Blasco9)
-- Linkedin: [Julian Blasco](https://www.linkedin.com/in/julian-augusto-blasco-1656a0153/)
+- Linkedin: [Julian Blasco](https://www.linkedin.com/in/julian-blasco/)
+- Email: blascoblasco9@gmail.com
 
 ## 🤝 Contributing
 
